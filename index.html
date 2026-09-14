@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Confeitaria RRV • Monte seu pedido</title>
+<title>RV Artesanal • Monte seu pedido</title>
 <link rel="icon" type="image/png" href="assets/logo-rrv.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="top"><div class="brand"><span class="brand-logo"><img src="assets/logo-rrv.png" alt=""></span><span>Confeitaria RRV</span></div><span class="tag">Pães & doces</span></div></header>
+<header><div class="top"><div class="brand"><span class="brand-logo"><img src="assets/logo-rrv.png" alt=""></span><span>RV Artesanal</span></div><span class="tag">Padaria & confeitaria artesanal</span></div></header>
 <main><div class="intro"><h1>Um carinho em cada pedaço.</h1></div>
-<section class="mural" aria-label="Fotos da Confeitaria RRV" aria-roledescription="carrossel">
+<section class="mural" aria-label="Fotos da RV Artesanal" aria-roledescription="carrossel">
  <div class="mural-track">
   <div class="mural-slide active" role="group" aria-label="Foto 1 de 6"><img src="assets/galeria-1.jpeg" alt="Pão artesanal dourado sobre uma grade" fetchpriority="high"></div>
   <div class="mural-slide" role="group" aria-label="Foto 2 de 6"><img src="assets/galeria-2.jpeg" alt="Pão artesanal dourado sobre uma tábua"></div>
@@ -26,7 +26,7 @@
 <section class="panel checkout-step"><div class="heading"><h2>Como prefere receber?</h2></div><fieldset><legend>Modalidade do pedido</legend><div class="delivery"><label><input type="radio" name="delivery" value="pickup" checked>Retirar na loja</label><label><input type="radio" name="delivery" value="delivery">Receber em casa</label></div></fieldset><p id="pickup-info" class="muted" style="font-size:13px">Local e horário de retirada a combinar.</p><fieldset id="address" hidden disabled><legend>Endereço de entrega</legend><div class="fields"><label class="full">Rua / avenida<input name="street" autocomplete="address-line1" required maxlength="150"></label><label>Número<input name="number" required maxlength="15" placeholder="Número ou s/n"></label><label>Bairro<input name="neighborhood" required maxlength="80"></label><label>Cidade<input name="city" autocomplete="address-level2" required maxlength="80"></label><label>Complemento <span class="muted">(opcional)</span><input name="complement" autocomplete="address-line2" maxlength="100"></label></div><p class="fine">Disponibilidade e taxa de entrega a confirmar com a loja.</p></fieldset></section>
 <section class="panel checkout-step"><div class="heading"><h2>Últimos detalhes</h2></div><div class="fields"><label class="full">Preferência de pagamento<select name="payment"><option>Pix</option><option>Cartão na entrega ou retirada</option><option>Dinheiro</option></select></label><label class="full">Observações <span class="muted">(opcional)</span><textarea name="notes" maxlength="500" placeholder="Algum detalhe sobre seu pedido?"></textarea></label></div></section>
 </div><aside><section class="panel"><div class="summary-heading"><h2>Seu pedido</h2><span id="count" class="pill">0 itens</span></div><div id="summary" aria-live="polite"></div><div class="totals"><div class="total-line"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div><div class="total-line muted"><span>Entrega</span><span id="fee">Retirada na loja</span></div><div class="total-line big"><span id="total-label">Total</span><span id="total">R$ 0,00</span></div></div><p id="cart-error" class="error" role="alert" hidden>Adicione pelo menos um produto.</p><button class="primary" id="continue" type="submit">Continuar →</button><button class="secondary previous" id="previous" type="button" hidden>← Voltar</button><p class="fine" style="text-align:center">Confira os detalhes antes de continuar.</p><p class="notice">Entre em contato pelo WhatsApp para confirmar valores e disponibilidade. O pedido só será enviado quando você tocar em Enviar no WhatsApp.</p></section></aside></div></form>
-</main><footer>Confeitaria RRV · Pães artesanais, cookies, brownies e palha italiana</footer>
+</main><footer>RV Artesanal · Pães artesanais, cookies e palha italiana</footer>
 <dialog id="review" aria-labelledby="review-title"><h2 id="review-title">Confira seu pedido</h2><p class="muted">Confira os detalhes. Ao continuar, o WhatsApp abrirá com a mensagem pronta para enviar à confeitaria.</p><pre id="review-text"></pre><div class="dialog-actions"><button class="secondary" id="back" type="button">Voltar</button><a class="primary contact" id="contact" target="_blank" rel="noopener noreferrer">Entrar em contato</a></div></dialog>
 <script src="script.js" defer></script>
 </body>

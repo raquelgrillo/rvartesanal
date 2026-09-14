@@ -1,5 +1,5 @@
 /* =======================================================================
-   Confeitaria RRV — comportamento
+   RV Artesanal — comportamento
    Índice:
      1. Catálogo de produtos e utilitários
      2. Navegação por etapas (checkout)
@@ -18,7 +18,6 @@
 const products = [
   { id: 'bread',   category: 'bread', name: 'Pão artesanal',  detail: 'Unidade', price: 2000, icon: '🥖', image: 'assets/pao.jpeg' },
   { id: 'cookie',  category: 'sweet', name: 'Cookie',         detail: 'Unidade', price: 700,  icon: '🍪', image: 'assets/cookie.jpeg' },
-  { id: 'brownie', category: 'sweet', name: 'Brownie',        detail: 'Unidade', price: 1500, icon: '🍫', image: 'assets/brownie.webp' },
   { id: 'palha',   category: 'sweet', name: 'Palha italiana', detail: 'Unidade', price: 1500, icon: '🍬', image: 'assets/palha-italiana.jpeg' },
 ];
 
@@ -196,7 +195,7 @@ form.addEventListener('submit', event => {
   const data = new FormData(form);
   const delivery = data.get('delivery') === 'delivery';
   const lines = [
-    'CONFEITARIA RRV • SOLICITAÇÃO DE PEDIDO',
+    'RV ARTESANAL • SOLICITAÇÃO DE PEDIDO',
     '',
     ...products.filter(p => cart.get(p.id)).map(p =>
       `${cart.get(p.id)}× ${p.name} (${p.detail}) — ${money(lineTotal(p, cart.get(p.id)))}`
