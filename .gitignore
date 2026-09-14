@@ -1,0 +1,7 @@
+backups/
+files.zip
+public/
+.wrangler/
+node_modules/
+*.log
+assets/mural-*.jpeg
