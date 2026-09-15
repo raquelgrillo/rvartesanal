@@ -1,5 +1,5 @@
 param(
-  [string]$ProjectName = 'confeitariarrv'
+  [string]$ProjectName = 'rvartesanal'
 )
 
 # Publica o site estático no Cloudflare Pages da conta autenticada no Wrangler.

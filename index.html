@@ -4,26 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RV Artesanal • Monte seu pedido</title>
-<link rel="icon" type="image/png" href="assets/logo-rrv.png">
+<link rel="icon" type="image/png" href="assets/logo_rv_artesanal_c_fundo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="top"><div class="brand"><span class="brand-logo"><img src="assets/logo-rrv.png" alt=""></span><span>RV Artesanal</span></div><span class="tag">Padaria & confeitaria artesanal</span></div></header>
-<main><div class="intro"><h1>Um carinho em cada pedaço.</h1></div>
+<header><div class="top"><a class="brand" href="#topo" aria-label="RV Artesanal — início"><span class="brand-logo"><img src="assets/logo_comprida.png" alt="RV Artesanal"></span></a><nav class="main-nav" aria-label="Navegação principal"><a href="#pedido" class="nav-cta">Faça seu pedido</a></nav></div></header>
+<main id="topo"><div class="hero">
+<div class="intro">
+  <h1>Feito à mão, no capricho</h1>
+  <p>Padaria de bairro, pequena e caseira. Fazemos pão de fermentação natural com tempo e paciência, além de cookies e palha italiana em pequenas fornadas, sempre fresquinhos. Cada encomenda é preparada sob medida pra você.</p>
+</div>
 <section class="mural" aria-label="Fotos da RV Artesanal" aria-roledescription="carrossel">
- <div class="mural-track">
-  <div class="mural-slide active" role="group" aria-label="Foto 1 de 6"><img src="assets/galeria-1.jpeg" alt="Pão artesanal dourado sobre uma grade" fetchpriority="high"></div>
-  <div class="mural-slide" role="group" aria-label="Foto 2 de 6"><img src="assets/galeria-2.jpeg" alt="Pão artesanal dourado sobre uma tábua"></div>
-  <div class="mural-slide" role="group" aria-label="Foto 3 de 6"><img src="assets/galeria-3.jpeg" alt="Dois pães artesanais recém-assados"></div>
-  <div class="mural-slide" role="group" aria-label="Foto 4 de 6"><img src="assets/galeria-4.jpeg" alt="Massa de pão artesanal preparada para assar"></div>
-  <div class="mural-slide" role="group" aria-label="Foto 5 de 6"><img src="assets/galeria-5.jpeg" alt="Pão artesanal acompanhado de cookie e palha italiana"></div>
-  <div class="mural-slide" role="group" aria-label="Foto 6 de 6"><img src="assets/galeria-6.jpeg" alt="Dois pães artesanais com cortes decorativos"></div>
- </div><div class="mural-controls" hidden><button type="button" id="mural-prev" aria-label="Foto anterior">‹</button><span id="mural-count">1 / 6</span><button type="button" id="mural-next" aria-label="Próxima foto">›</button><button type="button" id="mural-pause" aria-label="Pausar carrossel">Pausar</button></div>
+ <div class="mural-track"></div><div class="mural-controls" hidden><button type="button" id="mural-prev" aria-label="Foto anterior">‹</button><span id="mural-count"></span><button type="button" id="mural-next" aria-label="Próxima foto">›</button><button type="button" id="mural-pause" aria-label="Pausar carrossel">Pausar</button></div>
 </section>
-<nav class="checkout-progress" aria-label="Etapas do pedido"><span aria-current="step">Produtos</span><span>Seus dados</span><span>Entrega</span><span>Pagamento</span></nav><form id="order-form" novalidate><div class="layout"><div>
-<section class="panel checkout-step" aria-labelledby="products-title"><div class="heading"><h2 id="products-title">O que vai ser hoje?</h2></div><div class="filters" aria-label="Categorias"><button type="button" class="filter" data-category="all" aria-pressed="true">Todos</button><button type="button" class="filter" data-category="bread" aria-pressed="false">Pães artesanais</button><button type="button" class="filter" data-category="sweet" aria-pressed="false">Doces</button></div><div id="products"></div><p class="fine">Escolha as quantidades para montar seu pedido.</p></section>
+</div>
+<nav class="checkout-progress" id="pedido" aria-label="Etapas do pedido"><span aria-current="step">Produtos</span><span>Seus dados</span><span>Entrega</span><span>Pagamento</span></nav><form id="order-form" novalidate><div class="layout"><div>
+<section class="panel checkout-step" id="cardapio" aria-labelledby="products-title"><div class="heading"><h2 id="products-title">O que vai ser hoje?</h2></div><div class="filters" aria-label="Categorias"><button type="button" class="filter" data-category="all" aria-pressed="true">Todos</button><button type="button" class="filter" data-category="bread" aria-pressed="false">Pães artesanais</button><button type="button" class="filter" data-category="sweet" aria-pressed="false">Doces</button></div><div id="products"></div><p class="fine">Escolha as quantidades para montar seu pedido.</p></section>
 <section class="panel checkout-step"><div class="heading"><h2>Quem vai receber?</h2></div><div class="fields"><label>Seu nome<input name="customer" autocomplete="name" required maxlength="100" placeholder="Como podemos chamar você?"></label><label>WhatsApp<input name="phone" type="tel" autocomplete="tel" required pattern="\(?[0-9]{2}\)?\s?[0-9]{4,5}[-\s]?[0-9]{4}" title="Informe DDD e telefone, por exemplo (11) 99999-9999" placeholder="(11) 99999-9999" maxlength="16"></label></div></section>
-<section class="panel checkout-step"><div class="heading"><h2>Como prefere receber?</h2></div><fieldset><legend>Modalidade do pedido</legend><div class="delivery"><label><input type="radio" name="delivery" value="pickup" checked>Retirar na loja</label><label><input type="radio" name="delivery" value="delivery">Receber em casa</label></div></fieldset><p id="pickup-info" class="muted" style="font-size:13px">Local e horário de retirada a combinar.</p><fieldset id="address" hidden disabled><legend>Endereço de entrega</legend><div class="fields"><label class="full">Rua / avenida<input name="street" autocomplete="address-line1" required maxlength="150"></label><label>Número<input name="number" required maxlength="15" placeholder="Número ou s/n"></label><label>Bairro<input name="neighborhood" required maxlength="80"></label><label>Cidade<input name="city" autocomplete="address-level2" required maxlength="80"></label><label>Complemento <span class="muted">(opcional)</span><input name="complement" autocomplete="address-line2" maxlength="100"></label></div><p class="fine">Disponibilidade e taxa de entrega a confirmar com a loja.</p></fieldset></section>
+<section class="panel checkout-step"><div class="heading"><h2>Como prefere receber?</h2></div><fieldset><legend>Modalidade do pedido</legend><div class="delivery"><label><input type="radio" name="delivery" value="pickup" checked>Retirar na loja</label><label><input type="radio" name="delivery" value="delivery">Receber em casa</label></div></fieldset><p id="pickup-info" class="muted" style="font-size:13px">Local e horário de retirada a combinar.</p><fieldset id="address" hidden disabled><legend>Endereço de entrega</legend><div class="fields"><label class="full">Rua / avenida<input name="street" autocomplete="address-line1" required maxlength="150"></label><label>Número<input name="number" required maxlength="15" placeholder="Número ou s/n"></label><label>Bairro<input name="neighborhood" required maxlength="80"></label><label>Cidade<input name="city" value="Niterói" readonly required maxlength="80"></label><label>Complemento <span class="muted">(opcional)</span><input name="complement" autocomplete="address-line2" maxlength="100"></label></div><p class="fine">Entregamos apenas em Niterói. Taxa de entrega: R$ 10,00.</p></fieldset>
+<fieldset id="bread-date-field" hidden disabled><legend>Data de entrega</legend>
+<input type="hidden" name="deliveryDate" id="delivery-date">
+<div class="date-picker">
+  <button type="button" class="date-trigger" id="date-trigger" aria-haspopup="dialog" aria-expanded="false">
+    <span id="date-trigger-label">Selecione uma data</span>
+    <span class="date-trigger-icon" aria-hidden="true">📅</span>
+  </button>
+  <div class="calendar-pop" id="calendar-pop" role="dialog" aria-label="Escolher data de entrega" hidden>
+    <div class="calendar-head"><button type="button" id="cal-prev" aria-label="Mês anterior">‹</button><strong id="cal-title" aria-live="polite"></strong><button type="button" id="cal-next" aria-label="Próximo mês">›</button></div>
+    <div class="calendar-grid" id="cal-grid" role="grid" aria-label="Dias de entrega disponíveis"></div>
+  </div>
+</div>
+<div class="date-info" id="date-info" aria-live="polite" hidden></div>
+<p class="fine">Entregas acontecem sábado, domingo, segunda e terça. Encomendas vão até quinta-feira 18h para o fim de semana seguinte. A entrega na terça pode não ser possível, mas dá para buscar em casa.</p></fieldset>
+</section>
 <section class="panel checkout-step"><div class="heading"><h2>Últimos detalhes</h2></div><div class="fields"><label class="full">Preferência de pagamento<select name="payment"><option>Pix</option><option>Cartão na entrega ou retirada</option><option>Dinheiro</option></select></label><label class="full">Observações <span class="muted">(opcional)</span><textarea name="notes" maxlength="500" placeholder="Algum detalhe sobre seu pedido?"></textarea></label></div></section>
 </div><aside><section class="panel"><div class="summary-heading"><h2>Seu pedido</h2><span id="count" class="pill">0 itens</span></div><div id="summary" aria-live="polite"></div><div class="totals"><div class="total-line"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div><div class="total-line muted"><span>Entrega</span><span id="fee">Retirada na loja</span></div><div class="total-line big"><span id="total-label">Total</span><span id="total">R$ 0,00</span></div></div><p id="cart-error" class="error" role="alert" hidden>Adicione pelo menos um produto.</p><button class="primary" id="continue" type="submit">Continuar →</button><button class="secondary previous" id="previous" type="button" hidden>← Voltar</button><p class="fine" style="text-align:center">Confira os detalhes antes de continuar.</p><p class="notice">Entre em contato pelo WhatsApp para confirmar valores e disponibilidade. O pedido só será enviado quando você tocar em Enviar no WhatsApp.</p></section></aside></div></form>
 </main><footer>RV Artesanal · Pães artesanais, cookies e palha italiana</footer>

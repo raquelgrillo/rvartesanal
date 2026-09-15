@@ -1,0 +1,12 @@
+# Configuração do Cloudflare para o site RV Artesanal.
+# "pages_build_output_dir" diz qual pasta contém os arquivos estáticos do site.
+# Como o index.html fica na raiz, apontamos para ".".
+name = "rvartesanal"
+compatibility_date = "2025-09-01"
+pages_build_output_dir = "."
+
+# Banco de dados D1. O código acessa pela variável "DB" (env.DB).
+[[d1_databases]]
+binding = "DB"
+database_name = "rvartesanal"
+database_id = "31c4d09e-3035-4cce-b22e-371ed8f06916"
